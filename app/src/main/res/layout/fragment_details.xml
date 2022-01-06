@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.DetailsFragment">
+
+    <EditText
+        android:id="@+id/recordLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_field_margin"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:padding="@dimen/text_field_padding"
+        android:text="@string/record_login"
+        app:layout_constraintTop_toBottomOf="@+id/recordName"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <EditText
+        android:id="@+id/recordPassowrd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_field_margin"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:padding="@dimen/text_field_padding"
+        android:text="@string/record_password"
+        app:layout_constraintTop_toBottomOf="@+id/recordLogin"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <EditText
+        android:id="@+id/recordNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_field_margin"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:padding="@dimen/text_field_padding"
+        android:text="@string/record_note"
+        app:layout_constraintTop_toBottomOf="@+id/recordPassowrd"
+        tools:layout_editor_absoluteX="43dp" />
+
+    <EditText
+        android:id="@+id/recordName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_field_margin"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:padding="@dimen/text_field_padding"
+        android:text="@string/record_name"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Button
+        android:id="@+id/detailsSaveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_btn_margin"
+        android:text="@string/details_save"
+        app:layout_constraintEnd_toStartOf="@+id/detailsDeleteBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recordNote" />
+
+    <Button
+        android:id="@+id/detailsBackBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_btn_margin"
+        android:text="@string/details_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailsSaveBtn" />
+
+    <Button
+        android:id="@+id/detailsDeleteBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_btn_margin"
+        android:text="@string/details_delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/detailsSaveBtn"
+        app:layout_constraintTop_toBottomOf="@+id/recordNote" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Menadżer haseł</string>
+    <string name="tab_text_1">Lista</string>
+    <string name="tab_text_2">Synchronizacja</string>
+    <string name="record_name">Nazwa</string>
+    <string name="record_login">Login</string>
+    <string name="record_password">Hasło</string>
+    <string name="record_note">Notatka</string>
+    <string name="details_save">Zapisz</string>
+    <string name="details_back">Wstecz</string>
+    <string name="details_delete">Usuń</string>
+    <string name="synchronise_btn">Synchronizuj</string>
+    <string name="delete_confirm_message">Usunięto element</string>
+    <string name="save_confirm_message">Zapisano element</string>
+</resources>
