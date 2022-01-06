@@ -13,9 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_field_margin"
         android:ems="10"
+        android:hint="@string/record_login"
         android:inputType="textPersonName"
         android:padding="@dimen/text_field_padding"
-        android:text="@string/record_login"
         app:layout_constraintTop_toBottomOf="@+id/recordName"
         tools:layout_editor_absoluteX="16dp" />
 
@@ -25,9 +25,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_field_margin"
         android:ems="10"
+        android:hint="@string/record_password"
         android:inputType="textPersonName"
         android:padding="@dimen/text_field_padding"
-        android:text="@string/record_password"
         app:layout_constraintTop_toBottomOf="@+id/recordLogin"
         tools:layout_editor_absoluteX="16dp" />
 
@@ -37,9 +37,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_field_margin"
         android:ems="10"
+        android:hint="@string/record_note"
         android:inputType="textPersonName"
         android:padding="@dimen/text_field_padding"
-        android:text="@string/record_note"
         app:layout_constraintTop_toBottomOf="@+id/recordPassowrd"
         tools:layout_editor_absoluteX="43dp" />
 
@@ -49,9 +49,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_field_margin"
         android:ems="10"
+        android:hint="@string/record_name"
         android:inputType="textPersonName"
         android:padding="@dimen/text_field_padding"
-        android:text="@string/record_name"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="16dp" />
 
