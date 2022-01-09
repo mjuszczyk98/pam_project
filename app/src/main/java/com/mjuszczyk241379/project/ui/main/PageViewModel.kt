@@ -2,45 +2,57 @@ package com.mjuszczyk241379.project.ui.main
 
 import android.app.Application
 import androidx.lifecycle.*
-import com.mjuszczyk241379.project.data.AppDatabase
-import com.mjuszczyk241379.project.data.AppRepository
-import com.mjuszczyk241379.project.data.Password
+import com.mjuszczyk241379.project.data.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class PageViewModel(application: Application) : AndroidViewModel(application) {
 
     val readAllPasswordBasic: LiveData<List<Password>>
-    private val _repository: AppRepository
+    val lastSyncDate: LiveData<SyncDate>
+    private val passwordRepository: PasswordRepository
+    private val syncDateRepository: SyncDateRepository
+    private val _syncPasswordManager: SyncPasswordsManager
 
     init {
-        val passwordDao = AppDatabase.getDatabase(application).passwordDao()
-        _repository = AppRepository(passwordDao)
-        readAllPasswordBasic = _repository.readAllPasswordBasic
+        val database = AppDatabase.getDatabase(application)
+        val passwordDao = database.passwordDao()
+        val syncDateDao = database.syncDateDao()
+        passwordRepository = PasswordRepository(passwordDao)
+        syncDateRepository = SyncDateRepository(syncDateDao)
+        readAllPasswordBasic = passwordRepository.readAllPasswordBasic
+        lastSyncDate = syncDateRepository.getLatestUpdate()
+        _syncPasswordManager = SyncPasswordsManager(passwordRepository, syncDateRepository)
     }
 
     fun readPasswordById(id: Int): LiveData<Password> {
-        if (_repository == null) {
+        if (passwordRepository == null) {
             return MutableLiveData()
         }
-        return _repository.readPasswordById(id)
+        return passwordRepository.readPasswordById(id)
     }
 
     fun insert(password: Password) {
         viewModelScope.launch(Dispatchers.IO) {
-            _repository.insert(password)
+            passwordRepository.insert(password)
         }
     }
 
     fun update(password: Password) {
         viewModelScope.launch(Dispatchers.IO) {
-            _repository.update(password)
+            passwordRepository.update(password)
         }
     }
 
     fun delete(password: Password) {
         viewModelScope.launch(Dispatchers.IO) {
-            _repository.delete(password)
+            passwordRepository.delete(password)
+        }
+    }
+
+    fun syncPasswords(lastSyncDate: SyncDate){
+        viewModelScope.launch(Dispatchers.IO) {
+            _syncPasswordManager.syncPasswords(lastSyncDate.syncDate!!)
         }
     }
 }

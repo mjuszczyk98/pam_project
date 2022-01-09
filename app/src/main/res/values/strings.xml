@@ -12,4 +12,5 @@
     <string name="synchronise_btn">Synchronizuj</string>
     <string name="delete_confirm_message">Usunięto element</string>
     <string name="save_confirm_message">Zapisano element</string>
+    <string name="sync_confirm_message">Zsynchronizowano</string>
 </resources>

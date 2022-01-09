@@ -9,6 +9,9 @@ interface PasswordDao {
     @Query("SELECT id, name FROM password")
     fun readAllPasswordBasic(): LiveData<List<Password>>
 
+    @Query("SELECT * FROM password")
+    suspend fun readAll(): List<Password>
+
     @Query("SELECT * FROM password WHERE id=:passwordId")
     fun readPasswordById(passwordId: Int): LiveData<Password>
 
@@ -16,8 +19,8 @@ interface PasswordDao {
     suspend fun insert(vararg password: Password)
 
     @Update
-    suspend fun update(password: Password)
+    suspend fun update(vararg password: Password)
 
     @Delete
-    suspend fun delete(password: Password)
+    suspend fun delete(vararg password: Password)
 }

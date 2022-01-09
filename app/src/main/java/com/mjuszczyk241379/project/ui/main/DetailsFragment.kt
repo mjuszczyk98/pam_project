@@ -12,6 +12,7 @@ import androidx.navigation.Navigation
 import com.mjuszczyk241379.project.R
 import com.mjuszczyk241379.project.data.Password
 import com.mjuszczyk241379.project.databinding.FragmentDetailsBinding
+import java.util.*
 
 
 class DetailsFragment : Fragment() {
@@ -35,7 +36,7 @@ class DetailsFragment : Fragment() {
         }
 
         if (id == 0) {
-            selectedItem = Password(0, "", "", "", "")
+            selectedItem = Password(0, "", "", "", "", null, null)
             updateDisplayData(selectedItem)
         } else {
             pageViewModel.readPasswordById(id).observe(viewLifecycleOwner, {
@@ -61,7 +62,9 @@ class DetailsFragment : Fragment() {
                 binding.recordName.text.toString(),
                 binding.recordLogin.text.toString(),
                 binding.recordPassowrd.text.toString(),
-                binding.recordNote.text.toString()
+                binding.recordNote.text.toString(),
+                System.currentTimeMillis(),
+                selectedItem._id
             )
 
             if (selectedItem.id == 0) {
