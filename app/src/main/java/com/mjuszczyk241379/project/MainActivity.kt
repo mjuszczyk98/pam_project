@@ -1,5 +1,6 @@
 package com.mjuszczyk241379.project
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.tabs.TabLayout
 import androidx.viewpager.widget.ViewPager
@@ -22,5 +23,11 @@ class MainActivity : AppCompatActivity() {
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = binding.tabs
         tabs.setupWithViewPager(viewPager)
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        startActivity(Intent(this, LoginActivity::class.java))
+        finish()
     }
 }

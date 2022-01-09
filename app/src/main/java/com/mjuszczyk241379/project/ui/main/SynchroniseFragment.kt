@@ -29,12 +29,14 @@ class SynchroniseFragment : Fragment() {
         super.onStart()
 
         pageViewModel.lastSyncDate.observe(viewLifecycleOwner, {
-            selectedItem = it
             if (it?.syncDate != null) {
+                selectedItem = it
                 val date = Date(it.syncDate)
                 val lastUpdateString = context?.resources?.getString(R.string.sync_last_date_info) ?: ""
                 binding.lastUpdateText.text =
                     "$lastUpdateString\n${dateFormat.format(date)}"
+            } else {
+                selectedItem = SyncDate(0, 0)
             }
         })
 

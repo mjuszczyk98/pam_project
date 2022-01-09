@@ -9,51 +9,63 @@
 
     <EditText
         android:id="@+id/recordLogin"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_field_margin"
         android:ems="10"
         android:hint="@string/record_login"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:padding="@dimen/text_field_padding"
+        app:layout_constraintEnd_toEndOf="@+id/recordName"
+        app:layout_constraintStart_toStartOf="@+id/recordName"
         app:layout_constraintTop_toBottomOf="@+id/recordName"
-        tools:layout_editor_absoluteX="16dp" />
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/recordPassowrd"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_field_margin"
         android:ems="10"
         android:hint="@string/record_password"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:padding="@dimen/text_field_padding"
+        app:layout_constraintEnd_toEndOf="@+id/recordLogin"
+        app:layout_constraintStart_toStartOf="@+id/recordLogin"
         app:layout_constraintTop_toBottomOf="@+id/recordLogin"
-        tools:layout_editor_absoluteX="16dp" />
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/recordNote"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_field_margin"
         android:ems="10"
         android:hint="@string/record_note"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:padding="@dimen/text_field_padding"
+        app:layout_constraintEnd_toEndOf="@+id/recordPassowrd"
+        app:layout_constraintStart_toStartOf="@+id/recordPassowrd"
         app:layout_constraintTop_toBottomOf="@+id/recordPassowrd"
-        tools:layout_editor_absoluteX="43dp" />
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/recordName"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_field_margin"
         android:ems="10"
         android:hint="@string/record_name"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:padding="@dimen/text_field_padding"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintEnd_toStartOf="@+id/detailsSaveBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/detailsSaveBtn"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/detailsSaveBtn"
@@ -61,9 +73,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_btn_margin"
         android:text="@string/details_save"
-        app:layout_constraintEnd_toStartOf="@+id/detailsDeleteBtn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recordNote" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/detailsBackBtn"
@@ -71,9 +82,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_btn_margin"
         android:text="@string/details_back"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailsSaveBtn" />
+        app:layout_constraintEnd_toEndOf="@+id/detailsDeleteBtn"
+        app:layout_constraintStart_toStartOf="@+id/detailsDeleteBtn"
+        app:layout_constraintTop_toBottomOf="@+id/detailsDeleteBtn" />
 
     <Button
         android:id="@+id/detailsDeleteBtn"
@@ -81,8 +92,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_btn_margin"
         android:text="@string/details_delete"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/detailsSaveBtn"
-        app:layout_constraintTop_toBottomOf="@+id/recordNote" />
+        app:layout_constraintEnd_toEndOf="@+id/detailsSaveBtn"
+        app:layout_constraintStart_toStartOf="@+id/detailsSaveBtn"
+        app:layout_constraintTop_toBottomOf="@+id/detailsSaveBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

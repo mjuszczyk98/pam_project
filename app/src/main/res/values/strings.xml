@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Menadżer haseł</string>
     <string name="tab_text_1">Lista</string>
-    <string name="tab_text_2">Synchronizacja</string>
+    <string name="tab_text_2">Synchro</string>
+    <string name="tab_text_3">Zmiana Kodu</string>
     <string name="record_name">Nazwa</string>
     <string name="record_login">Login</string>
     <string name="record_password">Hasło</string>
@@ -14,4 +15,11 @@
     <string name="save_confirm_message">Zapisano element</string>
     <string name="sync_confirm_message">Zsynchronizowano</string>
     <string name="sync_last_date_info">Ostatnia synchronizacja:</string>
+    <string name="login_text">Hasło</string>
+    <string name="unlock_text">Odblokuj</string>
+    <string name="pass_old_text">Stare hasło</string>
+    <string name="pass_new_text">Nowe hasło</string>
+    <string name="pass_change_text">Zmień</string>
+    <string name="wrong_code">Zły kod</string>
+    <string name="correct_code_change">Zmieniono</string>
 </resources>

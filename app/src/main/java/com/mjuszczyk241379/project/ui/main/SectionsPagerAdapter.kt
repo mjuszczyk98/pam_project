@@ -12,12 +12,14 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager)
 
     private val _tabTitles = arrayOf(
         R.string.tab_text_1,
-        R.string.tab_text_2
+        R.string.tab_text_2,
+        R.string.tab_text_3
     )
 
     private val _fragments = arrayOf(
         PasswordFragment.newInstance(),
-        SynchroniseFragment.newInstance()
+        SynchroniseFragment.newInstance(),
+        SettingsFragment.newInstance()
     )
 
     override fun getItem(position: Int): Fragment {
