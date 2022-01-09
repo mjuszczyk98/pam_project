@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.mjuszczyk241379.project.R
-import com.mjuszczyk241379.project.data.Password
 import com.mjuszczyk241379.project.data.SyncDate
 import com.mjuszczyk241379.project.databinding.FragmentSynchroniseBinding
+import java.text.SimpleDateFormat
 import java.util.*
 
 class SynchroniseFragment : Fragment() {
@@ -18,6 +18,7 @@ class SynchroniseFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var pageViewModel: PageViewModel
     private lateinit var selectedItem: SyncDate
+    private val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss z")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +31,10 @@ class SynchroniseFragment : Fragment() {
         pageViewModel.lastSyncDate.observe(viewLifecycleOwner, {
             selectedItem = it
             if (it?.syncDate != null) {
-                binding.lastUpdateText.text = Date(it.syncDate).toString()
+                val date = Date(it.syncDate)
+                val lastUpdateString = context?.resources?.getString(R.string.sync_last_date_info) ?: ""
+                binding.lastUpdateText.text =
+                    "$lastUpdateString\n${dateFormat.format(date)}"
             }
         })
 

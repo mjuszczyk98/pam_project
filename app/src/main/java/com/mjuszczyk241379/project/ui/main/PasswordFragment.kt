@@ -11,13 +11,8 @@ import com.mjuszczyk241379.project.databinding.FragmentPasswordBinding
 
 class PasswordFragment : Fragment() {
 
-    private lateinit var pageViewModel: PageViewModel
     private var _binding: FragmentPasswordBinding? = null
     private val binding get() = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
             inflater: LayoutInflater,

@@ -109,7 +109,7 @@ class SyncPasswordsManager(
         tmpDocument["password"] = password.password
         tmpDocument["note"] = password.note
         tmpDocument["lastEditDate"] = password.lastEditDate
-        tmpDocument["_id"] = if (password._id == null) null else ObjectId(password._id)
+        tmpDocument["_id"] = if (password._id == null) ObjectId() else ObjectId(password._id)
         return tmpDocument
     }
 
